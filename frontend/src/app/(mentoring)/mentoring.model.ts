@@ -2,12 +2,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { useMutationMentoring } from '@/Mutate/useMutationMentoring'
-import { IMentoringAgendaService } from '@/services/MentoringAgenda/MentoringAgenda.service'
-
 import { SchemaMentoring } from './mentoring.schema'
 import { RegistrationResult, SchemaMentoringType } from './mentoring.type'
 import { registrationStatusMessages } from './registrationStatusMessages'
+
+import { useMutationMentoring } from '@/Mutate/MentoringMutate/useMutationMentoring'
+import { IMentoringAgendaService } from '@/services/MentoringAgenda/MentoringAgenda.service'
 
 export function useMentoringModel(mentoringService: IMentoringAgendaService) {
 	const [registrationResult, setRegistrationResult] = useState<RegistrationResult | null>(null)
